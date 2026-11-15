@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrandHorizon - Hotel Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-icon">♜</span><h1>GrandHorizon</h1><span class="badge">OpsHub</span></div>
+  <nav>
+    <button class="nav-button active" data-page="dashboard">⌂ Dashboard</button>
+    <button class="nav-button" data-page="rooms">▤ Room Catalogue</button>
+    <button class="nav-button" data-page="reservations">▦ Reservations &amp; Check-In</button>
+    <button class="nav-button" data-page="housekeeping">🧹 Housekeeping Status</button>
+  </nav>
+</header>
+<main>
+<section id="dashboard" class="page active-page">
+<h2 class="page-title">Operational Overview</h2>
+<div class="dashboard-grid">
+  <div class="metrics">
+    <article class="metric blue"><span class="metric-icon">🛏️</span><div>Total Reservations<h3 id="total-bookings">0</h3></div></article>
+    <article class="metric green"><span class="metric-icon">🛏️</span><div>Available &amp; Ready Rooms<h3 id="ready-rooms">0</h3></div></article>
+    <article class="metric amber"><span class="metric-icon">🧹</span><div>Pending Housekeeping<h3 id="pending-rooms">0</h3></div></article>
+  </div>
+  <article class="panel conflicts"><h3>⚠️ System Conflict Alerts</h3><p class="muted">Checking room availability, cleaning status and reservations.</p><div id="alert-list"></div></article>
+  <article class="panel housekeeping"><h3>🧹 Housekeeping Monitor</h3><div id="mini-housekeeping"></div></article>
+  <article class="panel history"><h3>▦ Recent Booking History</h3><div class="scroll"><table><thead><tr><th>Guest</th><th>Room</th><th>Dates</th><th>Status</th></tr></thead><tbody id="history-table"></tbody></table></div></article>
+  <article class="panel active-bookings"><h3>▦ Active Bookings <button class="text-button" data-open-page="reservations">View All →</button></h3><div class="scroll"><table><thead><tr><th>Guest Reference</th><th>Assigned Room</th><th>Duration Schedule</th><th>Action</th></tr></thead><tbody id="dashboard-bookings"></tbody></table></div></article>
+  <article class="panel catalogue"><h3>▣ Room Catalogue &amp; Real-Time Matrix <button class="text-button" data-open-page="rooms">View All →</button></h3><div id="dashboard-room-cards" class="room-grid"></div></article>
+  <article class="panel cleaning"><h3>🧹 Environmental Services &amp; Cleaning Logs</h3><div class="scroll"><table><thead><tr><th>Room</th><th>Room Type</th><th>Cleanliness</th><th>Status</th><th>Action</th></tr></thead><tbody id="dashboard-cleaning-table"></tbody></table></div></article>
+</div>
+</section>
+<section id="rooms" class="page"><h2 class="page-title">Room Catalogue &amp; Real-Time Matrix</h2><p class="muted">View room type, price, availability and cleanliness.</p><div id="all-room-cards" class="room-grid room-grid-large"></div></section>
+<section id="reservations" class="page">
+<h2 class="page-title">Reservations &amp; Check-In</h2>
+<div class="reservation-layout">
+  <article class="panel form-panel"><h3>New Reservation Form</h3>
+    <form id="reservation-form">
+      <label for="guest-name">Guest Full Name</label><input id="guest-name" type="text" placeholder="e.g. John Doe" required>
+      <label for="room-choice">Assign Available Room</label><select id="room-choice" required></select>
+      <div class="date-row"><div><label for="check-in">Check-In Date</label><input id="check-in" type="date" required></div><div><label for="check-out">Check-Out Date</label><input id="check-out" type="date" required></div></div>
+      <button class="main-button" type="submit">Process System Booking</button>
+    </form>
+  </article>
+  <article class="panel"><h3>Active Front Desk Controller</h3><div class="scroll"><table><thead><tr><th>Reference</th><th>Guest</th><th>Room</th><th>Stay</th><th>Action</th></tr></thead><tbody id="all-bookings-table"></tbody></table></div></article>
+</div>
+</section>
+<section id="housekeeping" class="page">
+<h2 class="page-title">Environmental Services &amp; Cleaning Logs</h2><p class="muted">Use the buttons to update the cleaning status of each room.</p>
+<article class="panel"><div class="scroll"><table><thead><tr><th>Room</th><th>Room Name</th><th>Room Type</th><th>Cleanliness</th><th>Reservation Status</th><th>Action</th></tr></thead><tbody id="all-cleaning-table"></tbody></table></div></article>
+</section>
+</main>
+<footer>♜ &nbsp; © 2026 Academic Development Portfolio Project. <em>Efficient management. A better guest experience.</em></footer>
+<script src="app.js"></script>
+</body></html>
