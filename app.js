@@ -1,9 +1,4 @@
-/*
- GRANDHORIZON HOTEL MANAGEMENT SYSTEM
- Beginner-friendly JavaScript:
- variables, arrays, objects, functions, if-else, for loops,
- DOM methods, events and localStorage.
-*/
+
 
 // PART 1: DEFAULT ROOM DATA (array of objects)
 var defaultRooms = [

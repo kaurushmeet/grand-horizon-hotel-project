@@ -1,4 +1,4 @@
-/* GrandHorizon styles - CSS selectors, box model, Grid, Flexbox and media queries */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #0c162b; color: #f5f7fc; font-family: "DM Sans", Arial, sans-serif; line-height: 1.5; }
 .topbar { background: #111d35; border-bottom: 1px solid #2c3d5d; padding: 14px 2%; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
@@ -83,7 +83,7 @@ footer em { float: right; font: italic 15px "Playfair Display", Georgia, serif; 
  footer em { float: none; display: block; margin-top: 8px; }
 }
 
-/* Enhanced dashboard details inspired by the supplied reference */
+/* Enhanced dashboard details */
 .metric-icon { box-shadow: 0 5px 16px #0003; }
 .conflicts { position: relative; }
 .conflicts h3 { display: flex; align-items: center; gap: 8px; }
